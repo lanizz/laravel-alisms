@@ -1,19 +1,19 @@
-# »ùÓÚLaravel5°¢ÀïÔÆ¶ÌĞÅ·şÎñÆ÷Ìá¹©Õß
+# åŸºäºLaravel5é˜¿é‡Œäº‘çŸ­ä¿¡æœåŠ¡å™¨æä¾›è€…
 
 
 ---
 
-### ComposerÌí¼ÓÒÀÀµ
+### Composeræ·»åŠ ä¾èµ–
 
-    composer require "lanizz/laravel-alisms:dev-master"
+ Â  Â composer require "lanizz/laravel-alisms:1.0"
 
-### ×¢²áÌá¹©Õß
-ÔÚconfig/app.configµÄprovidersÊı×éÌí¼ÓÕâ¶Î
+### æ³¨å†Œæä¾›è€…
+åœ¨config/app.configçš„providersæ•°ç»„æ·»åŠ è¿™æ®µ
 
     Lanizz\Laravel\AliSmsServiceProvider::class
 
-### Ìí¼ÓÅäÖÃÎÄ¼ş
-ÔÚconfig/ÏÂÌí¼ÓÅäÖÃÎÄ¼şalisms.php
+### æ·»åŠ é…ç½®æ–‡ä»¶
+åœ¨config/ä¸‹æ·»åŠ é…ç½®æ–‡ä»¶alisms.php
 
     <?php
     /**
@@ -23,27 +23,27 @@
     * Time: 16:09
     */
     return [
-        //°¢ÀïÔÆÉêÇëµÄKey
+        //é˜¿é‡Œäº‘ç”³è¯·çš„Key
         'key' => '',
-        //°¢ÀïÔÆÉêÇëµÄSecret
+        //é˜¿é‡Œäº‘ç”³è¯·çš„Secret
         'secret' => '',
-        //µØÇø, ¿ÉÒÔÖ¸¶¨¶ÌĞÅ·şÎñÆ÷µØÇø£¬Èç"cn-hangzhou","cn-beijing","cn-qingdao","cn-hongkong","cn-shanghai","us-west-1","cn-shenzhen","ap-southeast-1"
+        //åœ°åŒº, å¯ä»¥æŒ‡å®šçŸ­ä¿¡æœåŠ¡å™¨åœ°åŒºï¼Œå¦‚"cn-hangzhou","cn-beijing","cn-qingdao","cn-hongkong","cn-shanghai","us-west-1","cn-shenzhen","ap-southeast-1"
         'region' => 'cn-hangzhou',
-        //°¢ÀïÔÆÉêÇëµÄ¶ÌĞÅÇ©Ãû
+        //é˜¿é‡Œäº‘ç”³è¯·çš„çŸ­ä¿¡ç­¾å
         'sign' => ''
     ];
 
-### ¿ªÊ¼Ê¹ÓÃ
+### å¼€å§‹ä½¿ç”¨
 
     $sms = App::make('alisms');
-    $phone = ''; //ÊÖ»úºÅ
-    $tplCode = ''; //Ä£°æ±àÂë£¬°¢ÀïÔÆÉêÇë¶ÌĞÅÄ£°æÍ¨¹ıºó»áÓĞ
-    $params = []; //²ÎÊı£¬ÈôÃ»ÓĞ²ÎÊı²»´«
+    $phone = ''; //æ‰‹æœºå·
+    $tplCode = ''; //æ¨¡ç‰ˆç¼–ç ï¼Œé˜¿é‡Œäº‘ç”³è¯·çŸ­ä¿¡æ¨¡ç‰ˆé€šè¿‡åä¼šæœ‰
+    $params = []; //å‚æ•°ï¼Œè‹¥æ²¡æœ‰å‚æ•°ä¸ä¼ 
     $result = $sms->send($phone, $tplCode, $params);
-    //·µ»ØÖµ
+    //è¿”å›å€¼
     $result = [
-        'ErrorCode' => '', //´íÎóÂë£¬·¢Éú´íÎóÊ±ÓĞ
-        'ErrorMessage' => '', //´íÎóĞÅÏ¢£¬·¢Éú´íÎóÊ±ÓĞ
-        'Model' => '',  //³É¹¦²ÅÓĞ
-        'RequestId' => '' //³É¹¦ÓĞ²ÅÓĞ
+        'ErrorCode' => '', //é”™è¯¯ç ï¼Œå‘ç”Ÿé”™è¯¯æ—¶æœ‰
+        'ErrorMessage' => '', //é”™è¯¯ä¿¡æ¯ï¼Œå‘ç”Ÿé”™è¯¯æ—¶æœ‰
+        'Model' => '',  //æˆåŠŸæ‰æœ‰
+        'RequestId' => '' //æˆåŠŸæœ‰æ‰æœ‰
     ] 
