@@ -2,6 +2,8 @@
 
 
 ---
+1.0版本支持阿里云2017年6月22日升级之前的协议。
+升级后的协议在后续版本完成
 
 ### Composer添加依赖
 
@@ -40,8 +42,7 @@ return [
 ```
 
 
-### 开始使用
-
+### 发送短信
 ``` php
 $sms = App::make('alisms');
 $phone = ''; //手机号
@@ -55,4 +56,24 @@ $result = [
 	'Model' => '',  //成功才有
 	'RequestId' => '' //成功有才有
 ] 
+```
+### 查询结果
+```php
+$sms = App::make('alisms');
+$phone = ''; //手机号
+$sendDate = ''; //发送日期，格式Y-m-d
+$pageSize = 10; //每页数量，默认10
+$pageNo = 1; //当前页面，默认1
+$results = $sms->query($phone, $sendDate, $pageSize, $pageNo);
+//返回值
+$results = [
+	[
+	'SmsStatus' => 1, //状态码
+        'SmsContent' => '',//短信内容
+        'ReceiverNum' => '',//手机号
+        'ResultCode' => '', //结果码
+        'SmsCode' => '' //模版code
+	]
+	...
+]
 ```
