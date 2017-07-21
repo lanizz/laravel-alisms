@@ -21,38 +21,38 @@ Lanizz\Laravel\AliSmsServiceProvider::class
 
 ``` php
 <?php
-	/**
-	* Created by PhpStorm.
-	* User: Jinming
-	* Date: 2017/7/19
-	* Time: 16:09
-	*/
-	return [
-		//阿里云申请的Key
-		'key' => '',
-		//阿里云申请的Secret
-		'secret' => '',
-		//地区, 可以指定短信服务器地区，如"cn-hangzhou","cn-beijing","cn-qingdao","cn-hongkong","cn-shanghai","us-west-1","cn-shenzhen","ap-southeast-1"
-		'region' => 'cn-hangzhou',
-		//阿里云申请的短信签名
-		'sign' => ''
-	];
+/**
+* Created by PhpStorm.
+* User: Jinming
+* Date: 2017/7/19
+* Time: 16:09
+*/
+return [
+	//阿里云申请的Key
+	'key' => '',
+	//阿里云申请的Secret
+	'secret' => '',
+	//地区, 可以指定短信服务器地区，如"cn-hangzhou","cn-beijing","cn-qingdao","cn-hongkong","cn-shanghai","us-west-1","cn-shenzhen","ap-southeast-1"
+	'region' => 'cn-hangzhou',
+	//阿里云申请的短信签名
+	'sign' => ''
+];
 ```
 
 
 ### 开始使用
 
 ``` php
-    	$sms = App::make('alisms');
-	$phone = ''; //手机号
-	$tplCode = ''; //模版编码，阿里云申请短信模版通过后会有
-	$params = []; //参数，若没有参数不传
-	$result = $sms->send($phone, $tplCode, $params);
-	//返回值
-	$result = [
-		'ErrorCode' => '', //错误码，发生错误时有
-		'ErrorMessage' => '', //错误信息，发生错误时有
-		'Model' => '',  //成功才有
-		'RequestId' => '' //成功有才有
-	] 
+$sms = App::make('alisms');
+$phone = ''; //手机号
+$tplCode = ''; //模版编码，阿里云申请短信模版通过后会有
+$params = []; //参数，若没有参数不传
+$result = $sms->send($phone, $tplCode, $params);
+//返回值
+$result = [
+	'ErrorCode' => '', //错误码，发生错误时有
+	'ErrorMessage' => '', //错误信息，发生错误时有
+	'Model' => '',  //成功才有
+	'RequestId' => '' //成功有才有
+] 
 ```
