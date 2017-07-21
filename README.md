@@ -5,17 +5,17 @@
 
 ### Composer添加依赖
 
-    composer require "lanizz/laravel-alisms:1.0"
+> composer require "lanizz/laravel-alisms:1.0"
 
 ### 注册提供者
 在config/app.config的providers数组添加这段
 
-    Lanizz\Laravel\AliSmsServiceProvider::class
+> Lanizz\Laravel\AliSmsServiceProvider::class
 
 ### 添加配置文件
 在config/下添加配置文件alisms.php
 
-    <?php
+>    <?php
     /**
     * Created by PhpStorm.
     * User: Jinming
@@ -32,9 +32,9 @@
         //阿里云申请的短信签名
         'sign' => ''
     ];
+    
 
 ### 开始使用
-
     $sms = App::make('alisms');
     $phone = ''; //手机号
     $tplCode = ''; //模版编码，阿里云申请短信模版通过后会有
