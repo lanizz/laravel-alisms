@@ -103,7 +103,7 @@ class AliSms
                 'SmsStatus'=>$s->SmsStatus,
                 'SmsContent'=>$s->SmsContent,
                 'ReceiverNum'=>$s->ReceiverNum,
-                'ResultCode'=>$s->ResultCode,
+                'ResultCode'=>isset($s->ResultCode) ? $s->ResultCode : '',
                 'SmsCode'=>$s->SmsCode
             ];
         }
