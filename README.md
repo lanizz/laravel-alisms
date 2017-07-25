@@ -42,7 +42,7 @@ return [
 
 ### 发送短信
 ``` php
-$sms = App::make('alisms');
+$sms = app('alisms');
 $phone = ''; //手机号
 $tplCode = ''; //模版编码，阿里云申请短信模版通过后会有
 $params = []; //参数，若没有参数不传
@@ -57,7 +57,7 @@ $result = [
 ```
 ### 查询结果
 ```php
-$sms = App::make('alisms');
+$sms = app('alisms');
 $phone = ''; //手机号
 $sendDate = ''; //发送日期，格式Y-m-d
 $pageSize = 10; //每页数量，默认10
