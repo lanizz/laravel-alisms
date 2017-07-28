@@ -14,9 +14,9 @@ class AliSmsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        define('ENABLE_HTTP_PROXY', FALSE);
-        define('HTTP_PROXY_IP', '127.0.0.1');
-        define('HTTP_PROXY_PORT', '8888');
+        defined('ENABLE_HTTP_PROXY') or define('ENABLE_HTTP_PROXY', FALSE);
+        defined('HTTP_PROXY_IP') or define('HTTP_PROXY_IP', '127.0.0.1');
+        defined('HTTP_PROXY_PORT') or define('HTTP_PROXY_PORT', '8888');
     }
 
     public function register()
